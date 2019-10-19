@@ -81,4 +81,13 @@ func TestUnion(t *testing.T) {
 	if s.Find(0) != s.Find(3) {
 		t.Errorf("got different roots")
 	}
+
+	s = New(is)
+	s.Union(0, 1)
+	s.Union(1, 2)
+	s.Union(3, 0)
+	if s.Find(0) != s.Find(3) {
+		t.Errorf("got different roots")
+	}
+
 }
